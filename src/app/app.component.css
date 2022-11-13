@@ -1,0 +1,23 @@
+#inputField {
+  display: none
+}
+
+#table-ZB {
+  justify-content: center
+}
+
+.modal-dialog {
+}
+
+.error {
+  display: none
+}
+
+body {
+  margin-top: 27px;
+}
+
+.card {
+  border: 0px
+}
+

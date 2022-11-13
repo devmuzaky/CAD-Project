@@ -1,1 +1,284 @@
-<h2>Peace from our heart</h2>
+
+<!-- Modal -->
+
+<div class="modal fade" id="basiceModal" tabindex="-1" aria-labelledby="basicModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog modal-C-B">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title" id="result-h5">B Matrix</h5>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+
+      <div class="modal-body text-center">
+
+        <div id="resultField" class="table-responsive">
+          <table class="table table-bordered">
+            <tbody id="result-body">
+
+            </tbody>
+          </table>
+        </div>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">All Right</button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ZB Modal -->
+<div class="modal fade" id="ZB_modal" tabindex="-1" aria-labelledby="ZB_modal" aria-hidden="true">
+
+  <div class="modal-dialog" id="modal-ZB">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title" id="result-h5">ZB</h5>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+
+      <div class="modal-body text-center">
+
+        <div class="table-responsive">
+          <table class="table table-bordered d-flex" id="table-ZB">
+            <tbody id="ZB-body">
+            <tr>
+              <td><input type="text" name="ZB" class="ZB" size="3"></td>
+              <td><input type="text" name="ZB" class="ZB" size="3" value="0" disabled></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="ZB" id="ZB" size="3" disabled value="0"></td>
+              <td><input type="text" class="ZB" id="ZB" size="3"></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <button (click)="handleZB($event)" type="button" class="btn btn-primary" data-bs-dismiss="modal">Next
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- YB Modal -->
+<div class="modal fade" id="YB_modal" tabindex="-1" aria-labelledby="YB_modal" aria-hidden="true">
+
+  <div class="modal-dialog" id="modal-YB">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title" id="result-h5">YB</h5>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+
+      <div class="modal-body text-center">
+
+        <div class="table-responsive">
+          <table class="table table-bordered d-flex" id="table-ZB">
+            <tbody id="YB-body">
+
+            </tbody>
+          </table>
+        </div>
+        <button (click)="handleYB($event)" type="button" class="btn btn-primary" data-bs-dismiss="modal">Next
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- EB-IB Modal -->
+<div class="modal fade" id="EB_IB_modal" tabindex="-1" aria-labelledby="EB_IB_modal" aria-hidden="true">
+
+  <div class="modal-dialog" id="EB_IB_modal">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title" id="result-h5">EB - IB</h5>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+
+      <div class="modal-body text-center">
+
+        <div class="table-responsive">
+          <div class="row" style="margin:0">
+
+            <div class="col-2" id="EB-text" style="padding-right: 0;">
+              EB =
+            </div>
+            <div class="col-3" style="padding-left: 0;">
+              <table class="table" id="EB-table">
+                <tbody id="EB-body">
+
+                </tbody>
+              </table>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2" id="IB-text" style="padding-right: 0;">
+              IB =
+            </div>
+            <div class="col-4" style="padding-left: 0;">
+              <table class="table" id="IB-table">
+                <tbody id="IB-body">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <button (click)="generateZBorYB($event)" type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Back
+        </button>
+        <button (click)="calculateResult($event)" type="button" class="btn btn-success" data-bs-dismiss="modal">
+          Calculate
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- VB-JB Modal -->
+<div class="modal fade" id="VB_JB_modal" tabindex="-1" aria-labelledby="VB_JB_modal" aria-hidden="true">
+
+  <div class="modal-dialog" id="VB_JB_modal">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title" id="result-h5">VB - JB</h5>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+
+      <div class="modal-body text-center">
+
+        <div class="table-responsive">
+          <div class="row" style="margin:0">
+
+            <div class="col-2" id="JB-text" style="padding-right: 0;">
+              JB =
+            </div>
+            <div class="col-3" style="padding-left: 0;">
+              <table class="table table-bordered" id="JB-table">
+                <tbody id="JB-body">
+
+                </tbody>
+              </table>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2" id="VB-text" style="padding-right: 0;">
+              VB =
+            </div>
+            <div class="col-3" style="padding-left: 0;">
+              <table class="table table-bordered" id="VB-table">
+                <tbody id="VB-body">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">ALL Right</button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="text-center card">
+  <div class="container d-flex" style="    justify-content: center;">
+    <div class="">
+      <h1 class="text-center">Voltage-Current calculator</h1>
+      <p>Enter the size including the Branch and Links</p>
+      <form id="size" role="form">
+        <table class="table">
+          <tr>
+            <th>[A] Matrix Size</th>
+          </tr>
+          <tr>
+            <td><input type="text" name="row-size" id="row-size" size="3"> *
+              <input type="text" name="col-size" id="col-size" size="3"></td>
+          </tr>
+        </table>
+        <input type="submit" (click)="generateMatrix($event)" class="btn btn-dark w-100" value="generate Matrix">
+
+      </form>
+
+      <form id="inputField" role="form" class="form-matrix table-responsive">
+
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Branch</th>
+            <th>Link</th>
+          </tr>
+          </thead>
+          <tbody id="matrix">
+
+          </tbody>
+        </table>
+
+
+        <br>
+        <button (click)="handleMatrixA($event, 'calc_C')" class="btn btn-primary">Calculate C</button>
+        <button (click)="handleMatrixA($event, 'calc_B')" class="btn btn-primary">Calculate B</button>
+        <button class="btn btn-dark" (click)="generateZB($event)">Follow with ZB</button>
+        <button class="btn btn-dark" (click)="generateYB($event)">Follow with YB</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<app-graph *ngIf="show"
+  [nodes]="nodeData"
+             [edges]="edges"
+
+             [treeBranches]="highlighted"
+
+  ></app-graph>
+
