@@ -265,10 +265,13 @@
 
 
         <br>
-        <button (click)="handleMatrixA($event, 'calc_C')" class="btn btn-primary m-2">Cut-Set [C]</button>
-        <button (click)="handleMatrixA($event, 'calc_B')" class="btn btn-primary m-2">Tie-Set [B]</button>
-        <button class="btn btn-dark m-2" (click)="generateZB($event)">KVL</button>
-        <button class="btn btn-dark m-2" (click)="generateYB($event)">KCL</button>
+        <button (click)="handleMatrixA($event, 'calc_C')" class="btn btn-primary btnStyle"><span>Calculate C</span>
+        </button>
+        <button (click)="handleMatrixA($event, 'calc_B')" class="btn btn-primary btnStyle"><span>Calculate B</span>
+        </button>
+        <button (click)="generateZB($event)" class="btn btn-dark btnStyle"><span>Follow with ZB</span></button>
+        <button (click)="generateYB($event)" class="btn btn-dark btnStyle"><span>Follow with YB</span></button>
+
       </form>
 
     </div>
