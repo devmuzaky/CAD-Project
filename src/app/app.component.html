@@ -9,7 +9,7 @@
 
       <div class="modal-header">
 
-        <h5 class="modal-title" id="result-h5">B Matrix</h5>
+        <h5 class="modal-title" id="result-h5">Tie-Set Matrix</h5>
 
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
@@ -24,7 +24,7 @@
             </tbody>
           </table>
         </div>
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">All Right</button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Ok</button>
 
       </div>
 
@@ -216,7 +216,7 @@
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">ALL Right</button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
 
       </div>
 
@@ -229,21 +229,22 @@
 
 
 <div class="text-center card">
-  <div class="container d-flex" style="    justify-content: center;">
+  <h1 class="text-center">CAD Project</h1>
+
+  <div class="container d-flex" style="justify-content: center;">
     <div class="">
-      <h1 class="text-center">Voltage-Current calculator</h1>
-      <p>Enter the size including the Branch and Links</p>
+      <p>Enter the size of the reduced Incident matrix: </p>
       <form id="size" role="form">
         <table class="table">
-          <tr>
-            <th>[A] Matrix Size</th>
+          <tr style="display: inline;">
+            <th>Incident Matrix Size [A]: </th>
           </tr>
-          <tr>
+          <tr style="display: inline; padding-left: 20px;">
             <td><input type="text" name="row-size" id="row-size" size="3"> *
               <input type="text" name="col-size" id="col-size" size="3"></td>
           </tr>
         </table>
-        <input type="submit" (click)="generateMatrix($event)" class="btn btn-dark w-100" value="generate Matrix">
+        <input type="submit" (click)="generateMatrix($event)" class="btn btn-primary w-100" value="Fill Matrix">
 
       </form>
 
@@ -253,8 +254,8 @@
         <table class="table">
           <thead>
           <tr>
-            <th>Branch</th>
-            <th>Link</th>
+            <th>Tree Branch</th>
+            <th>Tree Link</th>
           </tr>
           </thead>
           <tbody id="matrix">
@@ -264,21 +265,24 @@
 
 
         <br>
-        <button (click)="handleMatrixA($event, 'calc_C')" class="btn btn-primary">Calculate C</button>
-        <button (click)="handleMatrixA($event, 'calc_B')" class="btn btn-primary">Calculate B</button>
-        <button class="btn btn-dark" (click)="generateZB($event)">Follow with ZB</button>
-        <button class="btn btn-dark" (click)="generateYB($event)">Follow with YB</button>
+        <button (click)="handleMatrixA($event, 'calc_C')" class="btn btn-primary m-2">Cut-Set [C]</button>
+        <button (click)="handleMatrixA($event, 'calc_B')" class="btn btn-primary m-2">Tie-Set [B]</button>
+        <button class="btn btn-dark m-2" (click)="generateZB($event)">KVL</button>
+        <button class="btn btn-dark m-2" (click)="generateYB($event)">KCL</button>
       </form>
 
     </div>
   </div>
 </div>
 
-<app-graph *ngIf="show"
-  [nodes]="nodeData"
+<div class="graph-container">
+  <app-graph *ngIf="show"
+             [nodes]="nodeData"
              [edges]="edges"
 
              [treeBranches]="highlighted"
 
   ></app-graph>
+
+</div>
 

@@ -21,3 +21,8 @@ body {
   border: 0px
 }
 
+.graph-container {
+  position: relative;
+  height: 250px;
+}
+

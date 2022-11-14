@@ -496,7 +496,7 @@ export class AppComponent {
       this.C_link_global = C_link
 
       if (type_of_operation == "calc_C") {
-        return this.printMatrix(C_branch, C_link, "C matrix")
+        return this.printMatrix(C_branch, C_link, "Cut-Set matrix")
       }
 
       const {
