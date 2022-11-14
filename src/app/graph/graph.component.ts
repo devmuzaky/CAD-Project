@@ -27,8 +27,19 @@ export class GraphComponent implements OnInit, AfterViewInit {
         nodes: this.nodes,
         // TODO: pass
         edges: this.edges,
-       treeBranches: value
       })
+      this.cy.edges().filter((edge: any) => this._treeBranches.includes(edge.data('id'))).addClass('highlighted');
+      this.cy.edges().filter((edge: any) => !this._treeBranches.includes(edge.data('id'))).removeClass('highlighted');
+      this.cy.on('add', 'node', (_evt: any) => {
+        this.cy.layout({
+          name: 'breadthfirst',
+          directed: true,
+          roots: '#a',
+          padding: 10
+        }).run()
+        this.cy.fit()
+      })
+
     }
  }
 
