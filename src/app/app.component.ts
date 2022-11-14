@@ -336,7 +336,7 @@ export class AppComponent {
   generateMatrix(e: Event) {
     e.preventDefault()
 
-    const row_size = parseInt(document.querySelector<HTMLInputElement>('#row-size')!.value)
+    const row_size = parseInt(document.querySelector<HTMLInputElement>('#row-size')!.value) + 1
     const col_size = parseInt(document.querySelector<HTMLInputElement>('#col-size')!.value)
 
 
