@@ -214,7 +214,6 @@ export class AppComponent {
     const size = this.branch_col_size + this.link_col_size;
 
     let identity = (math.identity(size) as any)._data;
-
     let html = '';
     identity.forEach((arr: any) => {
       html += '<tr>'
@@ -226,7 +225,8 @@ export class AppComponent {
 
       })
       html += '</tr>'
-    })
+    }
+  );
 
     (document.getElementById("YB-body") as HTMLElement).innerHTML = html;
 
