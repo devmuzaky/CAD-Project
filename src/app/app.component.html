@@ -1,6 +1,3 @@
-
-<!-- Modal -->
-
 <div class="modal fade" id="basiceModal" tabindex="-1" aria-labelledby="basicModalLabel" aria-hidden="true">
 
   <div class="modal-dialog modal-C-B">
@@ -66,8 +63,7 @@
             </tbody>
           </table>
         </div>
-        <button (click)="handleZB($event)" type="button" class="btn btn-primary" data-bs-dismiss="modal">Next
-        </button>
+        <button (click)="handleZB($event)" type="button" class="btn btn-primary" data-bs-dismiss="modal">Next</button>
 
       </div>
 
@@ -102,8 +98,7 @@
             </tbody>
           </table>
         </div>
-        <button (click)="handleYB($event)" type="button" class="btn btn-primary" data-bs-dismiss="modal">Next
-        </button>
+        <button (click)="handleYB($event)" type="button" class="btn btn-primary" data-bs-dismiss="modal">Next</button>
 
       </div>
 
@@ -244,7 +239,7 @@
               <input type="text" name="col-size" id="col-size" size="3"></td>
           </tr>
         </table>
-        <input type="submit" (click)="generateMatrix($event)" class="btn btn-primary w-100" value="Fill Matrix">
+        <input type="submit" (click)="generateMatrix($event)" class="btn btn-dark w-100" value="Fill Matrix">
 
       </form>
 
@@ -265,12 +260,12 @@
 
 
         <br>
-        <button (click)="handleMatrixA($event, 'calc_C')" class="btn btn-primary btnStyle"><span>Calculate C</span>
+        <button (click)="handleMatrixA($event, 'calc_C')" class="btn btn-primary btnStyle"><span>Cut-Set Matrix [C]</span>
         </button>
-        <button (click)="handleMatrixA($event, 'calc_B')" class="btn btn-primary btnStyle"><span>Calculate B</span>
+        <button (click)="handleMatrixA($event, 'calc_B')" class="btn btn-primary btnStyle"><span>Tie-Set Matrix [B]</span>
         </button>
-        <button (click)="generateZB($event)" class="btn btn-dark btnStyle"><span>Follow with ZB</span></button>
-        <button (click)="generateYB($event)" class="btn btn-dark btnStyle"><span>Follow with YB</span></button>
+        <button (click)="generateZB($event)" class="btn btn-dark btnStyle"><span>KVL [ZB]</span></button>
+        <button (click)="generateYB($event)" class="btn btn-dark btnStyle"><span>KCL [YB]</span></button>
 
       </form>
 

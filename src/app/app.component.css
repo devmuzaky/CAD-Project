@@ -15,10 +15,11 @@
 
 body {
   margin-top: 27px;
-}
+  }
 
 .card {
   border: 0;
+  background-color: #fcfcd9;
 }
 
 .graph-container {
